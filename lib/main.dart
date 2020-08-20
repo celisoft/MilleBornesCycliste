@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-// 'https://cdn.pixabay.com/photo/2018/07/11/21/51/toast-3532016_1280.jpg'
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -21,12 +20,12 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: MySplashscreen(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MySplashscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,6 +40,46 @@ class MyHomePage extends StatelessWidget {
               children: [
                 Text(
                   '1000 bornes cycliste',
+                  style: TextStyle(fontSize: 40, color: Colors.white),
+                ),
+                Column(
+                  children: [
+                    Text(
+                      'Appuyer ou cliquer pour jouer',
+                      style: TextStyle(fontSize: 20, color: Colors.white),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          GestureDetector(onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MyGame()),
+            );
+          }),
+        ],
+      ),
+    );
+  }
+}
+
+class MyGame extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.green,
+      body: Stack(
+        children: <Widget>[
+          Center(child: Image.asset('assets/images/background.jpg')),
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'Playing the game',
                   style: TextStyle(fontSize: 40, color: Colors.white),
                 ),
               ],
