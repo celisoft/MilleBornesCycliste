@@ -69,10 +69,10 @@ class MyGame extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      //backgroundColor: Colors.green,
       body: Stack(
         children: <Widget>[
-          Center(child: Image.asset('assets/images/background.jpg')),
+          //Center(child: Image.asset('assets/images/background.jpg')),
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
