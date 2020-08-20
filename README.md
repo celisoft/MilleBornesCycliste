@@ -1,16 +1,17 @@
-# MilleBornesCycliste
+## 1000 bornes cycliste
 
-A new Flutter project.
+Une version du jeu de 1000 bornes pour les cyclistes.
 
-## Getting Started
+## Développement du jeu
 
-This project is a starting point for a Flutter application.
+Le jeu est développé par itérations successives. Nous ferons plusieurs versions avant la version "finale".
+Les développeuses sont : [Zoé](https://github.com/Zoeinfp) et [moi-même](https://github.com/celisoft).
+Nous avons opté pour la licence GPL v3 pour ce qui est de la partie code et 
 
-A few resources to get you started if this is your first Flutter project:
+## Manuel du jeu
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Le manuel se trouve dans le wiki du projet pour éviter de surcharger ce document.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Technologies utilisées
+
+Ce jeu utilise principalement [Flutter](https://flutter.dev) qui permet le développement d'applications Web et mobile multiplateformes via le langage [Dart](https://dart.dev).
