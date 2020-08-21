@@ -64,9 +64,32 @@ class MySplashscreen extends StatelessWidget {
   }
 }
 
-class MyGame extends StatelessWidget {
+class MyGame extends StatefulWidget {
+  final String title;
+  MyGame({Key key, this.title}) : super(key: key);
+
+  @override
+  _MyGameState createState() => new _MyGameState();
+}
+
+class _MyGameState extends State<MyGame> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      // This call to setState tells the Flutter framework that something has
+      // changed in this State, which causes it to rerun the build method below
+      // so that the display can reflect the updated values. If we changed
+      // _counter without calling setState(), then the build method would not be
+      // called again, and so nothing would appear to happen.
+      _counter++;
+      print(_counter);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    int _counter = 0;
     return Scaffold(
       //backgroundColor: Colors.green,
       body: Stack(
@@ -77,10 +100,10 @@ class MyGame extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
+              children: <Widget>[
                 Text(
-                  'Playing the game',
-                  style: TextStyle(fontSize: 40, color: Colors.white),
+                  '$_counter',
+                  style: Theme.of(context).textTheme.headline4,
                 ),
               ],
             ),
@@ -107,63 +130,49 @@ class MyGame extends StatelessWidget {
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
-                              onPressed: () {
-                                print('TAP 1!!');
-                              },
+                              onPressed: _incrementCounter,
                               child: SizedBox(
                                   child: Image.asset('assets/borne_25.png')))),
                     ),
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
-                              onPressed: () {
-                                print('TAP 2!!');
-                              },
+                              onPressed: _incrementCounter,
                               child: SizedBox(
                                   child: Image.asset('assets/borne_25.png')))),
                     ),
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
-                              onPressed: () {
-                                print('TAP 3!!');
-                              },
+                              onPressed: _incrementCounter,
                               child: SizedBox(
                                   child: Image.asset('assets/borne_25.png')))),
                     ),
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
-                              onPressed: () {
-                                print('TAP 4!!');
-                              },
+                              onPressed: _incrementCounter,
                               child: SizedBox(
                                   child: Image.asset('assets/borne_25.png')))),
                     ),
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
-                              onPressed: () {
-                                print('TAP 5!!');
-                              },
+                              onPressed: _incrementCounter,
                               child: SizedBox(
                                   child: Image.asset('assets/borne_25.png')))),
                     ),
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
-                              onPressed: () {
-                                print('TAP 6!!');
-                              },
+                              onPressed: _incrementCounter,
                               child: SizedBox(
                                   child: Image.asset('assets/borne_25.png')))),
                     ),
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
-                              onPressed: () {
-                                print('TAP 7!!');
-                              },
+                              onPressed: _incrementCounter,
                               child: SizedBox(
                                   child: Image.asset('assets/borne_25.png')))),
                     ),
