@@ -32,7 +32,6 @@ class MySplashscreen extends StatelessWidget {
       backgroundColor: Colors.green,
       body: Stack(
         children: <Widget>[
-          Center(child: Image.asset('assets/images/background.jpg')),
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
