@@ -4,14 +4,10 @@ import 'dart:developer' as developer;
 /// Représente une carte de jeu
 ///
 class Card {
-  // ID
-  int id;
-
   // La distance que permet de faire la carte
   int distance;
 
-  Card(int pId, int pDistance){
-    id = pId;
+  Card(int pDistance){
     distance = pDistance;
     developer.log("Card " + this.distance.toString() + " created");
   }
