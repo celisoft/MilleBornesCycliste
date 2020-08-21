@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: '1000 bornes',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -73,6 +73,7 @@ class MyGame extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           //Center(child: Image.asset('assets/images/background.jpg')),
+
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -84,6 +85,51 @@ class MyGame extends StatelessWidget {
                 ),
               ],
             ),
+          ),
+
+          Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Table(
+                border: TableBorder.all(
+                    color: Colors.black26, style: BorderStyle.none),
+                children: [
+                  TableRow(children: [
+                    TableCell(child: Center(child: Text('Carte 1'))),
+                    TableCell(child: Center(child: Text('Carte 2'))),
+                    TableCell(child: Center(child: Text('Carte 3'))),
+                    TableCell(child: Center(child: Text('Carte 4'))),
+                    TableCell(child: Center(child: Text('Carte 5'))),
+                    TableCell(child: Center(child: Text('Carte 6'))),
+                    TableCell(child: Center(child: Text('Carte 7'))),
+                  ]),
+                  TableRow(children: [
+                    TableCell(
+                        child:
+                            Center(child: Image.asset('assets/borne_25.png'))),
+                    TableCell(
+                        child:
+                            Center(child: Image.asset('assets/borne_25.png'))),
+                    TableCell(
+                        child:
+                            Center(child: Image.asset('assets/borne_25.png'))),
+                    TableCell(
+                        child:
+                            Center(child: Image.asset('assets/borne_25.png'))),
+                    TableCell(
+                        child:
+                            Center(child: Image.asset('assets/borne_25.png'))),
+                    TableCell(
+                        child:
+                            Center(child: Image.asset('assets/borne_25.png'))),
+                    TableCell(
+                        child:
+                            Center(child: Image.asset('assets/borne_25.png'))),
+                  ]),
+                ],
+              ),
+            ],
           ),
         ],
       ),
