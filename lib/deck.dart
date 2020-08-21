@@ -8,6 +8,7 @@ class Deck{
 
   Deck(){
     // Initialisation en dur pour le debut :
+    cards = new Map();
 
     // 10 de 25
     for (var i = 0; i < 10; i++) {
@@ -30,7 +31,7 @@ class Deck{
     }
 
     // 4 de 200
-    for (var i = 42; i < 45; i++) {
+    for (var i = 42; i < 46; i++) {
       cards[i] = new Card(200);
     }
   }
