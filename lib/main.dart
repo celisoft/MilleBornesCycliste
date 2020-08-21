@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -105,27 +106,69 @@ class MyGame extends StatelessWidget {
                   ]),
                   TableRow(children: [
                     TableCell(
-                        child:
-                            Center(child: Image.asset('assets/borne_25.png'))),
+                      child: FittedBox(
+                          child: RaisedButton(
+                              onPressed: () {
+                                print('TAP 1!!');
+                              },
+                              child: SizedBox(
+                                  child: Image.asset('assets/borne_25.png')))),
+                    ),
                     TableCell(
-                        child:
-                            Center(child: Image.asset('assets/borne_25.png'))),
+                      child: FittedBox(
+                          child: RaisedButton(
+                              onPressed: () {
+                                print('TAP 2!!');
+                              },
+                              child: SizedBox(
+                                  child: Image.asset('assets/borne_25.png')))),
+                    ),
                     TableCell(
-                        child:
-                            Center(child: Image.asset('assets/borne_25.png'))),
+                      child: FittedBox(
+                          child: RaisedButton(
+                              onPressed: () {
+                                print('TAP 3!!');
+                              },
+                              child: SizedBox(
+                                  child: Image.asset('assets/borne_25.png')))),
+                    ),
                     TableCell(
-                        child:
-                            Center(child: Image.asset('assets/borne_25.png'))),
+                      child: FittedBox(
+                          child: RaisedButton(
+                              onPressed: () {
+                                print('TAP 4!!');
+                              },
+                              child: SizedBox(
+                                  child: Image.asset('assets/borne_25.png')))),
+                    ),
                     TableCell(
-                        child:
-                            Center(child: Image.asset('assets/borne_25.png'))),
+                      child: FittedBox(
+                          child: RaisedButton(
+                              onPressed: () {
+                                print('TAP 5!!');
+                              },
+                              child: SizedBox(
+                                  child: Image.asset('assets/borne_25.png')))),
+                    ),
                     TableCell(
-                        child:
-                            Center(child: Image.asset('assets/borne_25.png'))),
+                      child: FittedBox(
+                          child: RaisedButton(
+                              onPressed: () {
+                                print('TAP 6!!');
+                              },
+                              child: SizedBox(
+                                  child: Image.asset('assets/borne_25.png')))),
+                    ),
                     TableCell(
-                        child:
-                            Center(child: Image.asset('assets/borne_25.png'))),
-                  ]),
+                      child: FittedBox(
+                          child: RaisedButton(
+                              onPressed: () {
+                                print('TAP 7!!');
+                              },
+                              child: SizedBox(
+                                  child: Image.asset('assets/borne_25.png')))),
+                    ),
+                  ])
                 ],
               ),
             ],
