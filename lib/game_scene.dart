@@ -49,19 +49,40 @@ class _MyGameState extends State<MyGame> {
       body: Stack(
         children: <Widget>[
           Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Image.asset(
-                  'assets/motif.png',
-                  height: 150,
-                ),
-                Text(
-                  _currentGame.getPlayerProgress(),
-                  style: Theme.of(context).textTheme.headline4,
-                ),
-              ],
+            child: SizedBox(
+              width: 350,
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      _currentGame.getPlayerProgress(),
+                      style: Theme.of(context).textTheme.headline4,
+                    ),
+                    Table(
+                        border: TableBorder.all(
+                            color: Colors.black26, style: BorderStyle.none),
+                        children: [
+                          TableRow(children: [
+                            TableCell(
+                                child: LimitedBox(
+                                    child: RaisedButton(
+                                        onPressed: () => _incrementCounter(
+                                            0,
+                                            _currentGame
+                                                .player.hand[0].distance),
+                                        child: FittedBox(
+                                            child: Image.asset(
+                                                'assets/motif.png'))))),
+                            TableCell(
+                                child: LimitedBox(
+                                    child: LimitedBox(
+                                        maxHeight: 180,
+                                        child:
+                                            Image.asset('assets/motif.png')))),
+                          ]),
+                        ])
+                  ]),
             ),
           ),
 
@@ -80,7 +101,7 @@ class _MyGameState extends State<MyGame> {
                               onPressed: () => _incrementCounter(
                                   0, _currentGame.player.hand[0].distance),
                               child: LimitedBox(
-                                  maxHeight: 50, child: _getCardImage(0)))),
+                                  maxHeight: 80, child: _getCardImage(0)))),
                     ),
                     TableCell(
                       child: FittedBox(
@@ -88,7 +109,7 @@ class _MyGameState extends State<MyGame> {
                               onPressed: () => _incrementCounter(
                                   1, _currentGame.player.hand[1].distance),
                               child: LimitedBox(
-                                  maxHeight: 50, child: _getCardImage(1)))),
+                                  maxHeight: 80, child: _getCardImage(1)))),
                     ),
                     TableCell(
                       child: FittedBox(
@@ -96,7 +117,7 @@ class _MyGameState extends State<MyGame> {
                               onPressed: () => _incrementCounter(
                                   2, _currentGame.player.hand[2].distance),
                               child: LimitedBox(
-                                  maxHeight: 50, child: _getCardImage(2)))),
+                                  maxHeight: 80, child: _getCardImage(2)))),
                     ),
                     TableCell(
                       child: FittedBox(
@@ -104,7 +125,7 @@ class _MyGameState extends State<MyGame> {
                               onPressed: () => _incrementCounter(
                                   3, _currentGame.player.hand[3].distance),
                               child: LimitedBox(
-                                  maxHeight: 50, child: _getCardImage(3)))),
+                                  maxHeight: 80, child: _getCardImage(3)))),
                     ),
                     TableCell(
                       child: FittedBox(
@@ -112,7 +133,7 @@ class _MyGameState extends State<MyGame> {
                               onPressed: () => _incrementCounter(
                                   4, _currentGame.player.hand[4].distance),
                               child: LimitedBox(
-                                  maxHeight: 50, child: _getCardImage(4)))),
+                                  maxHeight: 80, child: _getCardImage(4)))),
                     ),
                     TableCell(
                       child: FittedBox(
@@ -120,7 +141,7 @@ class _MyGameState extends State<MyGame> {
                               onPressed: () => _incrementCounter(
                                   5, _currentGame.player.hand[5].distance),
                               child: LimitedBox(
-                                  maxHeight: 50, child: _getCardImage(5)))),
+                                  maxHeight: 80, child: _getCardImage(5)))),
                     ),
                     TableCell(
                       child: FittedBox(
@@ -128,7 +149,7 @@ class _MyGameState extends State<MyGame> {
                               onPressed: () => _incrementCounter(
                                   6, _currentGame.player.hand[6].distance),
                               child: LimitedBox(
-                                  maxHeight: 50, child: _getCardImage(6)))),
+                                  maxHeight: 80, child: _getCardImage(6)))),
                     ),
                   ])
                 ],
