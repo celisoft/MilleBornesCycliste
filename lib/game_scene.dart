@@ -1,6 +1,7 @@
 import 'package:MilleBornesCycliste/game.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'dart:developer' as developer;
 
 class MyGame extends StatefulWidget {
   final String title;
@@ -11,7 +12,7 @@ class MyGame extends StatefulWidget {
 }
 
 class _MyGameState extends State<MyGame> {
-  Game _currentGame = new Game();
+  final Game _currentGame = new Game();
 
   Image _getCardImage(int cardIndex) {
     String path = 'assets/motif.png';
@@ -26,12 +27,17 @@ class _MyGameState extends State<MyGame> {
 
   void _incrementCounter(int pCardID, int pDistance) {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
       _currentGame.player.progress += pDistance;
+      if(_currentGame.player.progress == Game.TARGET_DISTANCE){
+        // Objectif atteint
+        developer.log("Gagné !");
+      }else if(_currentGame.player.progress > Game.TARGET_DISTANCE || (_currentGame.player.progress + 25) > Game.TARGET_DISTANCE) {
+        // Objectif dépassé ou non atteignable au prochain tour
+        developer.log("Perdu !");
+      }else{
+        final int todo = Game.TARGET_DISTANCE-_currentGame.player.progress;
+        developer.log("Encore " + todo.toString() + " bornes à faire !");
+      }
       _currentGame.player.hand.remove(pCardID);
     });
   }

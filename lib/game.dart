@@ -4,6 +4,8 @@ import 'package:MilleBornesCycliste/player.dart';
 import 'package:MilleBornesCycliste/deck.dart';
 
 class Game {
+  static const int TARGET_DISTANCE = 300;
+
   Player player;
   Deck deck;
   Random random = Random();
@@ -19,7 +21,7 @@ class Game {
 
   void createHand() {
     for (var i = 0; i < 7; i++) {
-      int randomID = getRandomID();
+      final int randomID = getRandomID();
       Card pickedCard = deck.getCard(randomID);
       player.addCardInHand(i, pickedCard);
     }
