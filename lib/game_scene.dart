@@ -39,6 +39,10 @@ class _MyGameState extends State<MyGame> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
+                Image.asset(
+                  'assets/motif.png',
+                  height: 150,
+                ),
                 Text(
                   '$_counter',
                   style: Theme.of(context).textTheme.headline4,
@@ -69,7 +73,8 @@ class _MyGameState extends State<MyGame> {
                       child: FittedBox(
                           child: RaisedButton(
                               onPressed: _incrementCounter,
-                              child: SizedBox(
+                              child: LimitedBox(
+                                  maxHeight: 50,
                                   child: Image.asset(
                                       _currentGame.player.hand[0].getUri())))),
                     ),
@@ -77,7 +82,8 @@ class _MyGameState extends State<MyGame> {
                       child: FittedBox(
                           child: RaisedButton(
                               onPressed: _incrementCounter,
-                              child: SizedBox(
+                              child: LimitedBox(
+                                  maxHeight: 50,
                                   child: Image.asset(
                                       _currentGame.player.hand[1].getUri())))),
                     ),
@@ -85,7 +91,8 @@ class _MyGameState extends State<MyGame> {
                       child: FittedBox(
                           child: RaisedButton(
                               onPressed: _incrementCounter,
-                              child: SizedBox(
+                              child: LimitedBox(
+                                  maxHeight: 50,
                                   child: Image.asset(
                                       _currentGame.player.hand[2].getUri())))),
                     ),
@@ -93,7 +100,8 @@ class _MyGameState extends State<MyGame> {
                       child: FittedBox(
                           child: RaisedButton(
                               onPressed: _incrementCounter,
-                              child: SizedBox(
+                              child: LimitedBox(
+                                  maxHeight: 50,
                                   child: Image.asset(
                                       _currentGame.player.hand[3].getUri())))),
                     ),
@@ -101,7 +109,8 @@ class _MyGameState extends State<MyGame> {
                       child: FittedBox(
                           child: RaisedButton(
                               onPressed: _incrementCounter,
-                              child: SizedBox(
+                              child: LimitedBox(
+                                  maxHeight: 50,
                                   child: Image.asset(
                                       _currentGame.player.hand[4].getUri())))),
                     ),
@@ -109,7 +118,8 @@ class _MyGameState extends State<MyGame> {
                       child: FittedBox(
                           child: RaisedButton(
                               onPressed: _incrementCounter,
-                              child: SizedBox(
+                              child: LimitedBox(
+                                  maxHeight: 50,
                                   child: Image.asset(
                                       _currentGame.player.hand[5].getUri())))),
                     ),
@@ -117,7 +127,8 @@ class _MyGameState extends State<MyGame> {
                       child: FittedBox(
                           child: RaisedButton(
                               onPressed: _incrementCounter,
-                              child: SizedBox(
+                              child: LimitedBox(
+                                  maxHeight: 50,
                                   child: Image.asset(
                                       _currentGame.player.hand[6].getUri())))),
                     ),
