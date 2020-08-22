@@ -12,6 +12,8 @@ class MyGame extends StatefulWidget {
 
 class _MyGameState extends State<MyGame> {
   int _counter = 0;
+  Game _currentGame = new Game();
+  
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -20,14 +22,11 @@ class _MyGameState extends State<MyGame> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
-      print(_counter);
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    int _counter = 0;
-    Game _currentGame = new Game();
     return Scaffold(
       //backgroundColor: Colors.green,
       body: Stack(
