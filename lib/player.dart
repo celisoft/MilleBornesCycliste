@@ -5,14 +5,16 @@ import 'package:MilleBornesCycliste/card.dart';
 ///
 class Player {
   /// La main du joueur
-  List<Card> cards;
+  List<Card> hand;
 
-  Player();
+  Player() {
+    hand = new List();
+  }
 
   ///
   /// Ajoute une carte à la main du joueur
   ///
-  addCardInHand(Card pCard){
-    cards.add(pCard);
+  addCardInHand(Card pCard) {
+    hand.add(pCard);
   }
 }

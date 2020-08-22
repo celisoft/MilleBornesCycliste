@@ -3,10 +3,10 @@ import 'package:MilleBornesCycliste/card.dart';
 ///
 /// Représente la pioche
 ///
-class Deck{
+class Deck {
   Map<int, Card> cards;
 
-  Deck(){
+  Deck() {
     // Initialisation en dur pour le debut :
     cards = new Map();
 
@@ -14,7 +14,7 @@ class Deck{
     for (var i = 0; i < 10; i++) {
       cards[i] = new Card(25);
     }
-    
+
     // 10 de 50
     for (var i = 10; i < 20; i++) {
       cards[i] = new Card(50);
@@ -39,7 +39,14 @@ class Deck{
   ///
   /// Retourne la taille de la pioche
   ///
-  int getSize(){
+  int getSize() {
     return cards.length;
+  }
+
+  /// Retourne la carte associée à l'id en paramètre
+  Card getCard(i) {
+    Card pickedCard = cards[i];
+    cards.remove(i);
+    return pickedCard;
   }
 }

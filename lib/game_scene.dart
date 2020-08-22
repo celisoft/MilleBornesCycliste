@@ -1,3 +1,4 @@
+import 'package:MilleBornesCycliste/game.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,6 @@ class MyGame extends StatefulWidget {
 
 class _MyGameState extends State<MyGame> {
   int _counter = 0;
-
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -27,6 +27,7 @@ class _MyGameState extends State<MyGame> {
   @override
   Widget build(BuildContext context) {
     int _counter = 0;
+    Game _currentGame = new Game();
     return Scaffold(
       //backgroundColor: Colors.green,
       body: Stack(
@@ -69,49 +70,56 @@ class _MyGameState extends State<MyGame> {
                           child: RaisedButton(
                               onPressed: _incrementCounter,
                               child: SizedBox(
-                                  child: Image.asset('assets/borne_25.png')))),
+                                  child: Image.asset(
+                                      _currentGame.player.hand[0].getUri())))),
                     ),
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
                               onPressed: _incrementCounter,
                               child: SizedBox(
-                                  child: Image.asset('assets/borne_25.png')))),
+                                  child: Image.asset(
+                                      _currentGame.player.hand[1].getUri())))),
                     ),
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
                               onPressed: _incrementCounter,
                               child: SizedBox(
-                                  child: Image.asset('assets/borne_25.png')))),
+                                  child: Image.asset(
+                                      _currentGame.player.hand[2].getUri())))),
                     ),
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
                               onPressed: _incrementCounter,
                               child: SizedBox(
-                                  child: Image.asset('assets/borne_25.png')))),
+                                  child: Image.asset(
+                                      _currentGame.player.hand[3].getUri())))),
                     ),
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
                               onPressed: _incrementCounter,
                               child: SizedBox(
-                                  child: Image.asset('assets/borne_25.png')))),
+                                  child: Image.asset(
+                                      _currentGame.player.hand[4].getUri())))),
                     ),
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
                               onPressed: _incrementCounter,
                               child: SizedBox(
-                                  child: Image.asset('assets/borne_25.png')))),
+                                  child: Image.asset(
+                                      _currentGame.player.hand[5].getUri())))),
                     ),
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
                               onPressed: _incrementCounter,
                               child: SizedBox(
-                                  child: Image.asset('assets/borne_25.png')))),
+                                  child: Image.asset(
+                                      _currentGame.player.hand[6].getUri())))),
                     ),
                   ])
                 ],
