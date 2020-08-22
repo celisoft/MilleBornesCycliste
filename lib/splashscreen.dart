@@ -16,13 +16,13 @@ class MySplashscreen extends StatelessWidget {
               children: [
                 Text(
                   '1000 bornes cycliste',
-                  style: TextStyle(fontSize: 40, color: Colors.white),
+                  style: Theme.of(context).textTheme.headline1,
                 ),
                 Column(
                   children: [
                     Text(
                       'Appuyer ou cliquer pour jouer',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
+                      style: Theme.of(context).textTheme.headline6,
                     ),
                   ],
                 ),

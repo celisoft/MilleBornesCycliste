@@ -14,6 +14,7 @@ class MyGame extends StatefulWidget {
 class _MyGameState extends State<MyGame> {
   final Game _currentGame = new Game();
   String _playedCardPath = 'assets/motif.png';
+
   Image _getCardImage(int cardIndex) {
     String path = 'assets/motif.png';
     if (_currentGame.player.hand[cardIndex] != null) {
@@ -21,7 +22,6 @@ class _MyGameState extends State<MyGame> {
         path = _currentGame.player.hand[cardIndex].getUri();
       }
     }
-
     return Image.asset(path);
   }
 
@@ -57,9 +57,12 @@ class _MyGameState extends State<MyGame> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text(
-                      _currentGame.getPlayerProgress(),
-                      style: Theme.of(context).textTheme.headline4,
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 40.0),
+                      child: Text(
+                        _currentGame.getPlayerProgress(),
+                        style: Theme.of(context).textTheme.headline4,
+                      ),
                     ),
                     Table(
                         border: TableBorder.all(

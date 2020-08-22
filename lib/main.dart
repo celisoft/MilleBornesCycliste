@@ -19,7 +19,12 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
+        textTheme: TextTheme(
+          headline1: TextStyle(fontSize: 40, color: Colors.white),
+          headline4: TextStyle(fontSize: 34, color: Colors.white),
+          headline6: TextStyle(fontSize: 20, color: Colors.white),
+        )
       ),
       home: MySplashscreen(),
     );
