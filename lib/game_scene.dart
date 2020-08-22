@@ -13,7 +13,7 @@ class MyGame extends StatefulWidget {
 
 class _MyGameState extends State<MyGame> {
   final Game _currentGame = new Game();
-
+  String _playedCardPath = 'assets/motif.png';
   Image _getCardImage(int cardIndex) {
     String path = 'assets/motif.png';
     if (_currentGame.player.hand[cardIndex] != null) {
@@ -28,16 +28,18 @@ class _MyGameState extends State<MyGame> {
   void _incrementCounter(int pCardID, int pDistance) {
     setState(() {
       _currentGame.player.progress += pDistance;
-      if(_currentGame.player.progress == Game.TARGET_DISTANCE){
+      if (_currentGame.player.progress == Game.TARGET_DISTANCE) {
         // Objectif atteint
         developer.log("Gagné !");
-      }else if(_currentGame.player.progress > Game.TARGET_DISTANCE || (_currentGame.player.progress + 25) > Game.TARGET_DISTANCE) {
+      } else if (_currentGame.player.progress > Game.TARGET_DISTANCE ||
+          (_currentGame.player.progress + 25) > Game.TARGET_DISTANCE) {
         // Objectif dépassé ou non atteignable au prochain tour
         developer.log("Perdu !");
-      }else{
-        final int todo = Game.TARGET_DISTANCE-_currentGame.player.progress;
+      } else {
+        final int todo = Game.TARGET_DISTANCE - _currentGame.player.progress;
         developer.log("Encore " + todo.toString() + " bornes à faire !");
       }
+      _playedCardPath = _currentGame.player.hand[pCardID].getUri();
       _currentGame.player.hand.remove(pCardID);
     });
   }
@@ -78,8 +80,7 @@ class _MyGameState extends State<MyGame> {
                                 child: LimitedBox(
                                     child: LimitedBox(
                                         maxHeight: 180,
-                                        child:
-                                            Image.asset('assets/motif.png')))),
+                                        child: Image.asset(_playedCardPath)))),
                           ]),
                         ])
                   ]),
