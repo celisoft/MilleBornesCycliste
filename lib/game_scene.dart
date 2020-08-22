@@ -11,9 +11,8 @@ class MyGame extends StatefulWidget {
 }
 
 class _MyGameState extends State<MyGame> {
-  int _counter = 0;
   Game _currentGame = new Game();
-  
+
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -21,7 +20,7 @@ class _MyGameState extends State<MyGame> {
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _counter++;
+      _currentGame.player.progress += 1;
     });
   }
 
@@ -43,7 +42,7 @@ class _MyGameState extends State<MyGame> {
                   height: 150,
                 ),
                 Text(
-                  '$_counter',
+                  _currentGame.getPlayerProgress(),
                   style: Theme.of(context).textTheme.headline4,
                 ),
               ],

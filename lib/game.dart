@@ -23,6 +23,9 @@ class Game {
       Card pickedCard = deck.getCard(randomID);
       player.addCardInHand(pickedCard);
     }
-    print(player.hand);
+  }
+
+  String getPlayerProgress(){
+    return player.progress.toString();
   }
 }
