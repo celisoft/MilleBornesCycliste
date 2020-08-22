@@ -14,6 +14,7 @@ class MyGame extends StatefulWidget {
 class _MyGameState extends State<MyGame> {
   final Game _currentGame = new Game();
   String _playedCardPath = 'assets/motif.png';
+  int _emptyID = 10;
 
   Image _getCardImage(int cardIndex) {
     String path = 'assets/motif.png';
@@ -23,6 +24,13 @@ class _MyGameState extends State<MyGame> {
       }
     }
     return Image.asset(path);
+  }
+
+  void _getCard() {
+    setState(() {
+      _currentGame.pickCard(_emptyID);
+      _emptyID = 10;
+    });
   }
 
   void _incrementCounter(int pCardID, int pDistance) {
@@ -41,6 +49,7 @@ class _MyGameState extends State<MyGame> {
       }
       _playedCardPath = _currentGame.player.hand[pCardID].getUri();
       _currentGame.player.hand.remove(pCardID);
+      _emptyID = pCardID;
     });
   }
 
@@ -72,11 +81,8 @@ class _MyGameState extends State<MyGame> {
                             TableCell(
                                 child: LimitedBox(
                                     child: RaisedButton(
-                                        onPressed: () => _incrementCounter(
-                                            0,
-                                            _currentGame
-                                                .player.hand[0].distance),
-                                        child: FittedBox(
+                                        onPressed: () => _getCard(),
+                                        child: SizedBox(
                                             child: Image.asset(
                                                 'assets/motif.png'))))),
                             TableCell(
@@ -89,7 +95,6 @@ class _MyGameState extends State<MyGame> {
                   ]),
             ),
           ),
-
           Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.end,
