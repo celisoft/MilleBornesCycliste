@@ -45,11 +45,9 @@ class _MyGameState extends State<MyGame> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: Colors.green,
+      backgroundColor: Colors.green[900],
       body: Stack(
         children: <Widget>[
-          //Center(child: Image.asset('assets/images/background.jpg')),
-
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -75,15 +73,6 @@ class _MyGameState extends State<MyGame> {
                 border: TableBorder.all(
                     color: Colors.black26, style: BorderStyle.none),
                 children: [
-                  TableRow(children: [
-                    TableCell(child: Center(child: Text('Carte 1'))),
-                    TableCell(child: Center(child: Text('Carte 2'))),
-                    TableCell(child: Center(child: Text('Carte 3'))),
-                    TableCell(child: Center(child: Text('Carte 4'))),
-                    TableCell(child: Center(child: Text('Carte 5'))),
-                    TableCell(child: Center(child: Text('Carte 6'))),
-                    TableCell(child: Center(child: Text('Carte 7'))),
-                  ]),
                   TableRow(children: [
                     TableCell(
                       child: FittedBox(
