@@ -30,26 +30,34 @@ class _MyGameState extends State<MyGame> {
     setState(() {
       _currentGame.pickCard(_emptyID);
       _emptyID = 10;
+      _currentGame.player.canPick = true;
+      _currentGame.message = "";
     });
   }
 
   void _incrementCounter(int pCardID, int pDistance) {
     setState(() {
-      _currentGame.player.progress += pDistance;
-      if (_currentGame.player.progress == Game.TARGET_DISTANCE) {
-        // Objectif atteint
-        developer.log("Gagné !");
-      } else if (_currentGame.player.progress > Game.TARGET_DISTANCE ||
-          (_currentGame.player.progress + 25) > Game.TARGET_DISTANCE) {
-        // Objectif dépassé ou non atteignable au prochain tour
-        developer.log("Perdu !");
-      } else {
-        final int todo = Game.TARGET_DISTANCE - _currentGame.player.progress;
-        developer.log("Encore " + todo.toString() + " bornes à faire !");
+      if (_currentGame.player.canPick) {
+        _currentGame.player.canPick = false;
+        _currentGame.message = "Piochez une nouvelle carte.";
+        _currentGame.player.progress += pDistance;
+        if (_currentGame.player.progress == Game.TARGET_DISTANCE) {
+          // Objectif atteint
+          developer.log("Gagné !");
+          _currentGame.message = "Félicitations ! 1000 bornes à vélo !";
+        } else if (_currentGame.player.progress > Game.TARGET_DISTANCE ||
+            (_currentGame.player.progress + 25) > Game.TARGET_DISTANCE) {
+          // Objectif dépassé ou non atteignable au prochain tour
+          developer.log("Perdu !");
+          _currentGame.message = "Perdu ! Vous avez dépassé.";
+        } else {
+          final int todo = Game.TARGET_DISTANCE - _currentGame.player.progress;
+          developer.log("Encore " + todo.toString() + " bornes à faire !");
+        }
+        _playedCardPath = _currentGame.player.hand[pCardID].getUri();
+        _currentGame.player.hand.remove(pCardID);
+        _emptyID = pCardID;
       }
-      _playedCardPath = _currentGame.player.hand[pCardID].getUri();
-      _currentGame.player.hand.remove(pCardID);
-      _emptyID = pCardID;
     });
   }
 
@@ -99,6 +107,13 @@ class _MyGameState extends State<MyGame> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  _currentGame.message,
+                  style: Theme.of(context).textTheme.headline6,
+                ),
+              ),
               Table(
                 border: TableBorder.all(
                     color: Colors.black26, style: BorderStyle.none),

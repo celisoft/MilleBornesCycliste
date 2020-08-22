@@ -6,6 +6,7 @@ import 'package:MilleBornesCycliste/card.dart';
 class Player {
   /// Progression
   int progress;
+  bool canPick;
 
   /// La main du joueur
   Map<int, Card> hand;
@@ -13,6 +14,7 @@ class Player {
   Player() {
     hand = new Map();
     progress = 0;
+    canPick = true;
   }
 
   ///

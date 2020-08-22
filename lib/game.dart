@@ -9,9 +9,11 @@ class Game {
   Player player;
   Deck deck;
   Random random;
+  String message;
   List<int> alreadyPlayedCardsID;
 
   Game() {
+    message = "1000 bornes cycliste";
     player = new Player();
     deck = new Deck();
     random = Random();
