@@ -13,14 +13,14 @@ class MyGame extends StatefulWidget {
 class _MyGameState extends State<MyGame> {
   Game _currentGame = new Game();
 
-  void _incrementCounter() {
+  void _incrementCounter(int pDistance) {
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _currentGame.player.progress += 1;
+      _currentGame.player.progress += pDistance;
     });
   }
 
@@ -70,7 +70,7 @@ class _MyGameState extends State<MyGame> {
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
-                              onPressed: _incrementCounter,
+                              onPressed: () => _incrementCounter(_currentGame.player.hand[0].distance),
                               child: LimitedBox(
                                   maxHeight: 50,
                                   child: Image.asset(
@@ -79,7 +79,7 @@ class _MyGameState extends State<MyGame> {
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
-                              onPressed: _incrementCounter,
+                              onPressed: () => _incrementCounter(_currentGame.player.hand[1].distance),
                               child: LimitedBox(
                                   maxHeight: 50,
                                   child: Image.asset(
@@ -88,7 +88,7 @@ class _MyGameState extends State<MyGame> {
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
-                              onPressed: _incrementCounter,
+                              onPressed: () => _incrementCounter(_currentGame.player.hand[2].distance),
                               child: LimitedBox(
                                   maxHeight: 50,
                                   child: Image.asset(
@@ -97,7 +97,7 @@ class _MyGameState extends State<MyGame> {
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
-                              onPressed: _incrementCounter,
+                              onPressed: () => _incrementCounter(_currentGame.player.hand[3].distance),
                               child: LimitedBox(
                                   maxHeight: 50,
                                   child: Image.asset(
@@ -106,7 +106,7 @@ class _MyGameState extends State<MyGame> {
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
-                              onPressed: _incrementCounter,
+                              onPressed: () => _incrementCounter(_currentGame.player.hand[4].distance),
                               child: LimitedBox(
                                   maxHeight: 50,
                                   child: Image.asset(
@@ -115,7 +115,7 @@ class _MyGameState extends State<MyGame> {
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
-                              onPressed: _incrementCounter,
+                              onPressed: () => _incrementCounter(_currentGame.player.hand[5].distance),
                               child: LimitedBox(
                                   maxHeight: 50,
                                   child: Image.asset(
@@ -124,7 +124,7 @@ class _MyGameState extends State<MyGame> {
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
-                              onPressed: _incrementCounter,
+                              onPressed: () => _incrementCounter(_currentGame.player.hand[6].distance),
                               child: LimitedBox(
                                   maxHeight: 50,
                                   child: Image.asset(
