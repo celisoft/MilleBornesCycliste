@@ -21,11 +21,11 @@ class Game {
     for (var i = 0; i < 7; i++) {
       int randomID = getRandomID();
       Card pickedCard = deck.getCard(randomID);
-      player.addCardInHand(pickedCard);
+      player.addCardInHand(i, pickedCard);
     }
   }
 
-  String getPlayerProgress(){
+  String getPlayerProgress() {
     return player.progress.toString();
   }
 }

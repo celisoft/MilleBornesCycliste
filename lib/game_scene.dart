@@ -13,7 +13,18 @@ class MyGame extends StatefulWidget {
 class _MyGameState extends State<MyGame> {
   Game _currentGame = new Game();
 
-  void _incrementCounter(int pDistance) {
+  Image _getCardImage(int cardIndex) {
+    String path = 'assets/motif.png';
+    if (_currentGame.player.hand[cardIndex] != null) {
+      if (_currentGame.player.hand[cardIndex].getUri() != "") {
+        path = _currentGame.player.hand[cardIndex].getUri();
+      }
+    }
+
+    return Image.asset(path);
+  }
+
+  void _incrementCounter(int pCardID, int pDistance) {
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -21,6 +32,7 @@ class _MyGameState extends State<MyGame> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _currentGame.player.progress += pDistance;
+      _currentGame.player.hand.remove(pCardID);
     });
   }
 
@@ -70,65 +82,58 @@ class _MyGameState extends State<MyGame> {
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
-                              onPressed: () => _incrementCounter(_currentGame.player.hand[0].distance),
+                              onPressed: () => _incrementCounter(
+                                  0, _currentGame.player.hand[0].distance),
                               child: LimitedBox(
-                                  maxHeight: 50,
-                                  child: Image.asset(
-                                      _currentGame.player.hand[0].getUri())))),
+                                  maxHeight: 50, child: _getCardImage(0)))),
                     ),
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
-                              onPressed: () => _incrementCounter(_currentGame.player.hand[1].distance),
+                              onPressed: () => _incrementCounter(
+                                  1, _currentGame.player.hand[1].distance),
                               child: LimitedBox(
-                                  maxHeight: 50,
-                                  child: Image.asset(
-                                      _currentGame.player.hand[1].getUri())))),
+                                  maxHeight: 50, child: _getCardImage(1)))),
                     ),
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
-                              onPressed: () => _incrementCounter(_currentGame.player.hand[2].distance),
+                              onPressed: () => _incrementCounter(
+                                  2, _currentGame.player.hand[2].distance),
                               child: LimitedBox(
-                                  maxHeight: 50,
-                                  child: Image.asset(
-                                      _currentGame.player.hand[2].getUri())))),
+                                  maxHeight: 50, child: _getCardImage(2)))),
                     ),
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
-                              onPressed: () => _incrementCounter(_currentGame.player.hand[3].distance),
+                              onPressed: () => _incrementCounter(
+                                  3, _currentGame.player.hand[3].distance),
                               child: LimitedBox(
-                                  maxHeight: 50,
-                                  child: Image.asset(
-                                      _currentGame.player.hand[3].getUri())))),
+                                  maxHeight: 50, child: _getCardImage(3)))),
                     ),
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
-                              onPressed: () => _incrementCounter(_currentGame.player.hand[4].distance),
+                              onPressed: () => _incrementCounter(
+                                  4, _currentGame.player.hand[4].distance),
                               child: LimitedBox(
-                                  maxHeight: 50,
-                                  child: Image.asset(
-                                      _currentGame.player.hand[4].getUri())))),
+                                  maxHeight: 50, child: _getCardImage(4)))),
                     ),
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
-                              onPressed: () => _incrementCounter(_currentGame.player.hand[5].distance),
+                              onPressed: () => _incrementCounter(
+                                  5, _currentGame.player.hand[5].distance),
                               child: LimitedBox(
-                                  maxHeight: 50,
-                                  child: Image.asset(
-                                      _currentGame.player.hand[5].getUri())))),
+                                  maxHeight: 50, child: _getCardImage(5)))),
                     ),
                     TableCell(
                       child: FittedBox(
                           child: RaisedButton(
-                              onPressed: () => _incrementCounter(_currentGame.player.hand[6].distance),
+                              onPressed: () => _incrementCounter(
+                                  6, _currentGame.player.hand[6].distance),
                               child: LimitedBox(
-                                  maxHeight: 50,
-                                  child: Image.asset(
-                                      _currentGame.player.hand[6].getUri())))),
+                                  maxHeight: 50, child: _getCardImage(6)))),
                     ),
                   ])
                 ],

@@ -8,17 +8,17 @@ class Player {
   int progress;
 
   /// La main du joueur
-  List<Card> hand;
+  Map<int, Card> hand;
 
   Player() {
-    hand = new List();
+    hand = new Map();
     progress = 0;
   }
 
   ///
   /// Ajoute une carte à la main du joueur
   ///
-  addCardInHand(Card pCard) {
-    hand.add(pCard);
+  addCardInHand(int index, Card pCard) {
+    hand[index] = pCard;
   }
 }

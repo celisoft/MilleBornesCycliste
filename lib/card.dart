@@ -13,7 +13,11 @@ class Card {
   }
 
   String getUri() {
-    return 'assets/borne_' + this.distance.toString() + '.png';
+    String uri = "";
+    if (this.distance != null) {
+      uri = 'assets/borne_' + this.distance.toString() + '.png';
+    }
+    return uri;
   }
 
   String toString() {
