@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:developer' as developer;
 
+import 'package:flutter_phoenix/flutter_phoenix.dart';
+
 class MyGame extends StatefulWidget {
   final String title;
   MyGame({Key key, this.title}) : super(key: key);
@@ -67,6 +69,25 @@ class _MyGameState extends State<MyGame> {
       backgroundColor: Colors.green[900],
       body: Stack(
         children: <Widget>[
+          Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: RaisedButton(
+                  color: Colors.green[900],
+                  shape: RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(30.0)),
+                  onPressed: () {
+                    Phoenix.rebirth(context);
+                  },
+                  child: Wrap(children: <Widget>[
+                    Icon(
+                      Icons.replay,
+                      color: Colors.white,
+                    ),
+                    Text(
+                      "Recommencer",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ]))),
           Center(
             child: SizedBox(
               width: 350,
