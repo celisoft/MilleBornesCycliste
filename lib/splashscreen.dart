@@ -14,9 +14,14 @@ class MySplashscreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  '1000 bornes cycliste',
-                  style: Theme.of(context).textTheme.headline1,
+                FittedBox(
+                  child: Padding(
+                    padding: const EdgeInsets.all(40.0),
+                    child: Text(
+                      '1000 bornes cycliste',
+                      style: Theme.of(context).textTheme.headline1,
+                    ),
+                  ),
                 ),
                 Column(
                   children: [
@@ -26,6 +31,29 @@ class MySplashscreen extends StatelessWidget {
                     ),
                   ],
                 ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(100.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                FittedBox(
+                  child: Text(
+                    '@celine_liberal  @zoebelleton',
+                    style: Theme.of(context).textTheme.headline5,
+                  ),
+                ),
+                Center(
+                  child: FittedBox(
+                    child: Text(
+                      'https://github.com/celisoft/MilleBornesCycliste',
+                      style: Theme.of(context).textTheme.headline5,
+                    ),
+                  ),
+                )
               ],
             ),
           ),

@@ -74,7 +74,7 @@ class _MyGameState extends State<MyGame> {
       body: Stack(
         children: <Widget>[
           Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(25.0),
               child: RaisedButton(
                   color: Colors.green[900],
                   shape: RoundedRectangleBorder(
@@ -99,6 +99,13 @@ class _MyGameState extends State<MyGame> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        _currentGame.message,
+                        style: Theme.of(context).textTheme.headline6,
+                      ),
+                    ),
                     Padding(
                       padding: const EdgeInsets.only(bottom: 40.0),
                       child: Text(
@@ -132,13 +139,6 @@ class _MyGameState extends State<MyGame> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  _currentGame.message,
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-              ),
               Table(
                 border: TableBorder.all(
                     color: Colors.black26, style: BorderStyle.none),
