@@ -3,9 +3,11 @@ import 'package:MilleBornesCycliste/card.dart';
 import 'package:MilleBornesCycliste/player.dart';
 import 'package:MilleBornesCycliste/deck.dart';
 
+enum GameStatus { IN_PROGRESS, SUCCESS, FAIL }
+
 class Game {
   static const int TARGET_DISTANCE = 1000;
-
+  GameStatus status;
   Player player;
   Deck deck;
   Random random;
@@ -19,6 +21,7 @@ class Game {
     random = Random();
     alreadyPlayedCardsID = new List();
     createHand();
+    status = GameStatus.IN_PROGRESS;
   }
 
   int getRandomID() {
@@ -47,6 +50,7 @@ class Game {
       final int randomID = getRandomID();
       Card pickedCard = deck.getCard(randomID);
       player.addCardInHand(handPosition, pickedCard);
+      alreadyPlayedCardsID.add(randomID);
     }
   }
 }

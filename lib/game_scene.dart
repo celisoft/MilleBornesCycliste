@@ -29,12 +29,14 @@ class _MyGameState extends State<MyGame> {
   }
 
   void _getCard() {
-    setState(() {
-      _currentGame.pickCard(_emptyID);
-      _emptyID = 10;
-      _currentGame.player.canPick = true;
-      _currentGame.message = "";
-    });
+    if (_currentGame.status == GameStatus.IN_PROGRESS) {
+      setState(() {
+        _currentGame.pickCard(_emptyID);
+        _emptyID = 10;
+        _currentGame.player.canPick = true;
+        _currentGame.message = "";
+      });
+    }
   }
 
   void _incrementCounter(int pCardID, int pDistance) {
@@ -47,11 +49,13 @@ class _MyGameState extends State<MyGame> {
           // Objectif atteint
           developer.log("Gagné !");
           _currentGame.message = "Félicitations ! 1000 bornes à vélo !";
+          _currentGame.status = GameStatus.SUCCESS;
         } else if (_currentGame.player.progress > Game.TARGET_DISTANCE ||
             (_currentGame.player.progress + 25) > Game.TARGET_DISTANCE) {
           // Objectif dépassé ou non atteignable au prochain tour
           developer.log("Perdu !");
           _currentGame.message = "Perdu ! Vous avez dépassé.";
+          _currentGame.status = GameStatus.FAIL;
         } else {
           final int todo = Game.TARGET_DISTANCE - _currentGame.player.progress;
           developer.log("Encore " + todo.toString() + " bornes à faire !");
@@ -84,7 +88,7 @@ class _MyGameState extends State<MyGame> {
                       color: Colors.white,
                     ),
                     Text(
-                      "Recommencer",
+                      "   Recommencer  ",
                       style: TextStyle(color: Colors.white),
                     ),
                   ]))),
