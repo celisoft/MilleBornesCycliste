@@ -87,7 +87,8 @@ class _MyGameState extends State<MyGame> {
       body: Stack(
         children: <Widget>[
           Padding(
-              padding: const EdgeInsets.all(25.0),
+              padding:
+                  const EdgeInsets.only(bottom: 25.0, top: 10.0, left: 2.0),
               child: RaisedButton(
                   color: Colors.green[900],
                   shape: RoundedRectangleBorder(
@@ -112,29 +113,6 @@ class _MyGameState extends State<MyGame> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        _currentGame.message,
-                        style: Theme.of(context).textTheme.headline6,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: new LinearPercentIndicator(
-                        lineHeight: 14.0,
-                        percent:
-                            int.parse(_currentGame.getPlayerProgress()) / 1000,
-                        center: Text(
-                          (_currentGame.getPlayerProgress() + "/1000")
-                              .toString(),
-                          style: new TextStyle(
-                              fontSize: 12.0, color: Colors.black),
-                        ),
-                        backgroundColor: Colors.green[800],
-                        progressColor: Colors.white,
-                      ),
-                    ),
                     Table(
                         border: TableBorder.all(
                             color: Colors.black26, style: BorderStyle.none),
@@ -159,7 +137,30 @@ class _MyGameState extends State<MyGame> {
                                         maxHeight: 100,
                                         child: Image.asset(_playedCardPath)))),
                           ]),
-                        ])
+                        ]),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        _currentGame.message,
+                        style: Theme.of(context).textTheme.headline6,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: new LinearPercentIndicator(
+                        lineHeight: 14.0,
+                        percent:
+                            int.parse(_currentGame.getPlayerProgress()) / 1000,
+                        center: Text(
+                          (_currentGame.getPlayerProgress() + "/1000")
+                              .toString(),
+                          style: new TextStyle(
+                              fontSize: 12.0, color: Colors.black),
+                        ),
+                        backgroundColor: Colors.green[800],
+                        progressColor: Colors.white,
+                      ),
+                    ),
                   ]),
             ),
           ),
