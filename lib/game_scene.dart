@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'dart:developer' as developer;
 
 import 'package:flutter_phoenix/flutter_phoenix.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 class MyGame extends StatefulWidget {
   final String title;
@@ -107,10 +108,19 @@ class _MyGameState extends State<MyGame> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 40.0),
-                      child: Text(
-                        _currentGame.getPlayerProgress(),
-                        style: Theme.of(context).textTheme.headline4,
+                      padding: const EdgeInsets.all(15.0),
+                      child: new LinearPercentIndicator(
+                        lineHeight: 14.0,
+                        percent:
+                            int.parse(_currentGame.getPlayerProgress()) / 1000,
+                        center: Text(
+                          (_currentGame.getPlayerProgress() + "/1000")
+                              .toString(),
+                          style: new TextStyle(
+                              fontSize: 12.0, color: Colors.black),
+                        ),
+                        backgroundColor: Colors.green[800],
+                        progressColor: Colors.white,
                       ),
                     ),
                     Table(
