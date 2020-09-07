@@ -132,11 +132,14 @@ class _MyGameState extends State<MyGame> {
                                 child: LimitedBox(
                                     maxHeight: 150,
                                     child: FittedBox(
-                                      child: RaisedButton(
-                                          onPressed: () => _getCard(),
-                                          child: SizedBox(
-                                              child: Image.asset(
-                                                  'assets/motif.png'))),
+                                      child: ButtonTheme(
+                                        buttonColor: Colors.green[800],
+                                        child: RaisedButton(
+                                            onPressed: () => _getCard(),
+                                            child: SizedBox(
+                                                child: Image.asset(
+                                                    'assets/motif.png'))),
+                                      ),
                                     ))),
                             TableCell(
                                 child: LimitedBox(
