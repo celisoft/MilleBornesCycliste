@@ -130,15 +130,18 @@ class _MyGameState extends State<MyGame> {
                           TableRow(children: [
                             TableCell(
                                 child: LimitedBox(
-                                    child: RaisedButton(
-                                        onPressed: () => _getCard(),
-                                        child: SizedBox(
-                                            child: Image.asset(
-                                                'assets/motif.png'))))),
+                                    maxHeight: 150,
+                                    child: FittedBox(
+                                      child: RaisedButton(
+                                          onPressed: () => _getCard(),
+                                          child: SizedBox(
+                                              child: Image.asset(
+                                                  'assets/motif.png'))),
+                                    ))),
                             TableCell(
                                 child: LimitedBox(
                                     child: LimitedBox(
-                                        maxHeight: 180,
+                                        maxHeight: 150,
                                         child: Image.asset(_playedCardPath)))),
                           ]),
                         ])
