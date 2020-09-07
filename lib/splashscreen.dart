@@ -23,37 +23,51 @@ class MySplashscreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Column(
-                  children: [
-                    Text(
-                      'Appuyer ou cliquer pour jouer',
-                      style: Theme.of(context).textTheme.headline6,
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(100.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
                 FittedBox(
-                  child: Text(
-                    '@celine_liberal  @zoebelleton',
-                    style: Theme.of(context).textTheme.headline5,
-                  ),
-                ),
-                Center(
-                  child: FittedBox(
-                    child: Text(
-                      'https://github.com/celisoft/MilleBornesCycliste',
-                      style: Theme.of(context).textTheme.headline5,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        Center(
+                          child: Text(
+                            'Appuyer ou cliquer pour jouer',
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                )
+                ),
+                FittedBox(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        Center(
+                          child: Text(
+                            '@celine_liberal  @zoebelleton',
+                            style: Theme.of(context).textTheme.headline5,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                FittedBox(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        Center(
+                          child: Text(
+                            'https://github.com/celisoft/MilleBornesCycliste',
+                            style: Theme.of(context).textTheme.headline5,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
