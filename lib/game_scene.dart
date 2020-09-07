@@ -113,36 +113,43 @@ class _MyGameState extends State<MyGame> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Table(
-                        border: TableBorder.all(
-                            color: Colors.black26, style: BorderStyle.none),
-                        children: [
-                          TableRow(children: [
-                            TableCell(
-                                child: LimitedBox(
-                                    maxHeight: 85,
-                                    child: FittedBox(
-                                      child: ButtonTheme(
-                                        buttonColor: Colors.green[800],
-                                        child: RaisedButton(
-                                            onPressed: () => _getCard(),
-                                            child: SizedBox(
-                                                child: Image.asset(
-                                                    'assets/motif.png'))),
-                                      ),
-                                    ))),
-                            TableCell(
-                                child: LimitedBox(
-                                    child: LimitedBox(
-                                        maxHeight: 85,
-                                        child: Image.asset(_playedCardPath)))),
-                          ]),
-                        ]),
-                    Container(
-                      child: Text(
-                        _currentGame.message,
-                        style: Theme.of(context).textTheme.headline6,
+                    Padding(
+                      padding: const EdgeInsets.all(2.0),
+                      child: Container(
+                        child: Text(
+                          _currentGame.message,
+                          style: Theme.of(context).textTheme.headline6,
+                        ),
                       ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Table(
+                          border: TableBorder.all(
+                              color: Colors.black26, style: BorderStyle.none),
+                          children: [
+                            TableRow(children: [
+                              TableCell(
+                                  child: LimitedBox(
+                                      maxHeight: 85,
+                                      child: FittedBox(
+                                        child: ButtonTheme(
+                                          buttonColor: Colors.green[800],
+                                          child: RaisedButton(
+                                              onPressed: () => _getCard(),
+                                              child: SizedBox(
+                                                  child: Image.asset(
+                                                      'assets/motif.png'))),
+                                        ),
+                                      ))),
+                              TableCell(
+                                  child: LimitedBox(
+                                      child: LimitedBox(
+                                          maxHeight: 85,
+                                          child:
+                                              Image.asset(_playedCardPath)))),
+                            ]),
+                          ]),
                     ),
                     Container(
                       child: new LinearPercentIndicator(

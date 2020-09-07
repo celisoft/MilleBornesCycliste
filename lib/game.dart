@@ -15,7 +15,7 @@ class Game {
   List<int> alreadyPlayedCardsID;
 
   Game() {
-    message = "";
+    message = "Jouez une borne de votre main!";
     player = new Player();
     deck = new Deck();
     random = Random();
