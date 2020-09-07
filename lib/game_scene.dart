@@ -131,7 +131,7 @@ class _MyGameState extends State<MyGame> {
                             TableRow(children: [
                               TableCell(
                                   child: LimitedBox(
-                                      maxHeight: 85,
+                                      maxHeight: 120,
                                       child: FittedBox(
                                         child: ButtonTheme(
                                           buttonColor: Colors.green[800],
@@ -145,7 +145,7 @@ class _MyGameState extends State<MyGame> {
                               TableCell(
                                   child: LimitedBox(
                                       child: LimitedBox(
-                                          maxHeight: 85,
+                                          maxHeight: 120,
                                           child:
                                               Image.asset(_playedCardPath)))),
                             ]),
@@ -174,7 +174,7 @@ class _MyGameState extends State<MyGame> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               LimitedBox(
-                maxHeight: 80,
+                maxHeight: 60,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Table(
