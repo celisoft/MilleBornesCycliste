@@ -175,69 +175,93 @@ class _MyGameState extends State<MyGame> {
             children: [
               LimitedBox(
                 maxHeight: 80,
-                child: Table(
-                  border: TableBorder.all(
-                      color: Colors.black26, style: BorderStyle.none),
-                  children: [
-                    TableRow(children: [
-                      TableCell(
-                        child: FittedBox(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Table(
+                    border: TableBorder.all(
+                        color: Colors.black26, style: BorderStyle.none),
+                    children: [
+                      TableRow(children: [
+                        TableCell(
+                          child: FittedBox(
+                              child: ButtonTheme(
+                            buttonColor: Colors.green[900],
                             child: RaisedButton(
                                 onPressed: () => _incrementCounter(
                                     0, _currentGame.player.hand[0].distance),
                                 child: LimitedBox(
-                                    maxHeight: 80, child: _getCardImage(0)))),
-                      ),
-                      TableCell(
-                        child: FittedBox(
+                                    maxHeight: 80, child: _getCardImage(0))),
+                          )),
+                        ),
+                        TableCell(
+                          child: FittedBox(
+                              child: ButtonTheme(
+                            buttonColor: Colors.green[900],
                             child: RaisedButton(
                                 onPressed: () => _incrementCounter(
                                     1, _currentGame.player.hand[1].distance),
                                 child: LimitedBox(
-                                    maxHeight: 80, child: _getCardImage(1)))),
-                      ),
-                      TableCell(
-                        child: FittedBox(
+                                    maxHeight: 80, child: _getCardImage(1))),
+                          )),
+                        ),
+                        TableCell(
+                          child: FittedBox(
+                              child: ButtonTheme(
+                            buttonColor: Colors.green[900],
                             child: RaisedButton(
                                 onPressed: () => _incrementCounter(
                                     2, _currentGame.player.hand[2].distance),
                                 child: LimitedBox(
-                                    maxHeight: 80, child: _getCardImage(2)))),
-                      ),
-                      TableCell(
-                        child: FittedBox(
+                                    maxHeight: 80, child: _getCardImage(2))),
+                          )),
+                        ),
+                        TableCell(
+                          child: FittedBox(
+                              child: ButtonTheme(
+                            buttonColor: Colors.green[900],
                             child: RaisedButton(
                                 onPressed: () => _incrementCounter(
                                     3, _currentGame.player.hand[3].distance),
                                 child: LimitedBox(
-                                    maxHeight: 80, child: _getCardImage(3)))),
-                      ),
-                      TableCell(
-                        child: FittedBox(
+                                    maxHeight: 80, child: _getCardImage(3))),
+                          )),
+                        ),
+                        TableCell(
+                          child: FittedBox(
+                              child: ButtonTheme(
+                            buttonColor: Colors.green[900],
                             child: RaisedButton(
                                 onPressed: () => _incrementCounter(
                                     4, _currentGame.player.hand[4].distance),
                                 child: LimitedBox(
-                                    maxHeight: 80, child: _getCardImage(4)))),
-                      ),
-                      TableCell(
-                        child: FittedBox(
+                                    maxHeight: 80, child: _getCardImage(4))),
+                          )),
+                        ),
+                        TableCell(
+                          child: FittedBox(
+                              child: ButtonTheme(
+                            buttonColor: Colors.green[900],
                             child: RaisedButton(
                                 onPressed: () => _incrementCounter(
                                     5, _currentGame.player.hand[5].distance),
                                 child: LimitedBox(
-                                    maxHeight: 80, child: _getCardImage(5)))),
-                      ),
-                      TableCell(
-                        child: FittedBox(
+                                    maxHeight: 80, child: _getCardImage(5))),
+                          )),
+                        ),
+                        TableCell(
+                          child: FittedBox(
+                              child: ButtonTheme(
+                            buttonColor: Colors.green[900],
                             child: RaisedButton(
                                 onPressed: () => _incrementCounter(
                                     6, _currentGame.player.hand[6].distance),
                                 child: LimitedBox(
-                                    maxHeight: 80, child: _getCardImage(6)))),
-                      ),
-                    ])
-                  ],
+                                    maxHeight: 80, child: _getCardImage(6))),
+                          )),
+                        ),
+                      ])
+                    ],
+                  ),
                 ),
               ),
             ],
