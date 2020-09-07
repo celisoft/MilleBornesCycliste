@@ -138,15 +138,13 @@ class _MyGameState extends State<MyGame> {
                                         child: Image.asset(_playedCardPath)))),
                           ]),
                         ]),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    Container(
                       child: Text(
                         _currentGame.message,
                         style: Theme.of(context).textTheme.headline6,
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(15.0),
+                    Container(
                       child: new LinearPercentIndicator(
                         lineHeight: 14.0,
                         percent:
