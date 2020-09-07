@@ -15,7 +15,7 @@ class Game {
   List<int> alreadyPlayedCardsID;
 
   Game() {
-    message = "1000 bornes cycliste";
+    message = "";
     player = new Player();
     deck = new Deck();
     random = Random();

@@ -72,6 +72,18 @@ class _MyGameState extends State<MyGame> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.green[900],
+      appBar: AppBar(
+        title: const Text('1000 bornes cycliste'),
+        leading: IconButton(
+          icon: Icon(
+            Icons.directions_bike,
+            color: Colors.white,
+          ),
+          onPressed: () {},
+        ),
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.green[900],
+      ),
       body: Stack(
         children: <Widget>[
           Padding(
