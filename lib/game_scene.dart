@@ -107,8 +107,8 @@ class _MyGameState extends State<MyGame> {
                     ),
                   ]))),
           Center(
-            child: Expanded(
-              flex: 70,
+            child: SizedBox(
+              width: 350,
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -131,7 +131,9 @@ class _MyGameState extends State<MyGame> {
                             TableRow(children: [
                               TableCell(
                                   child: LimitedBox(
-                                      maxHeight: 120,
+                                      maxHeight:
+                                          MediaQuery.of(context).size.height *
+                                              0.20,
                                       child: FittedBox(
                                         child: ButtonTheme(
                                           buttonColor: Colors.green[800],
@@ -145,7 +147,10 @@ class _MyGameState extends State<MyGame> {
                               TableCell(
                                   child: LimitedBox(
                                       child: LimitedBox(
-                                          maxHeight: 120,
+                                          maxHeight: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.20,
                                           child:
                                               Image.asset(_playedCardPath)))),
                             ]),
