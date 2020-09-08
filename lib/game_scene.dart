@@ -133,7 +133,7 @@ class _MyGameState extends State<MyGame> {
                                   child: LimitedBox(
                                       maxHeight:
                                           MediaQuery.of(context).size.height *
-                                              0.20,
+                                              0.15,
                                       child: FittedBox(
                                         child: ButtonTheme(
                                           buttonColor: Colors.green[800],
@@ -150,7 +150,7 @@ class _MyGameState extends State<MyGame> {
                                           maxHeight: MediaQuery.of(context)
                                                   .size
                                                   .height *
-                                              0.20,
+                                              0.15,
                                           child:
                                               Image.asset(_playedCardPath)))),
                             ]),
@@ -178,10 +178,10 @@ class _MyGameState extends State<MyGame> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              LimitedBox(
-                maxHeight: 80,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+              Container(
+                margin: const EdgeInsets.only(bottom: 10.0),
+                child: LimitedBox(
+                  maxHeight: MediaQuery.of(context).size.height * 0.15,
                   child: Table(
                     border: TableBorder.all(
                         color: Colors.black26, style: BorderStyle.none),
@@ -195,7 +195,10 @@ class _MyGameState extends State<MyGame> {
                                 onPressed: () => _incrementCounter(
                                     0, _currentGame.player.hand[0].distance),
                                 child: LimitedBox(
-                                    maxHeight: 80, child: _getCardImage(0))),
+                                    maxHeight:
+                                        MediaQuery.of(context).size.height *
+                                            0.15,
+                                    child: _getCardImage(0))),
                           )),
                         ),
                         TableCell(
@@ -206,7 +209,10 @@ class _MyGameState extends State<MyGame> {
                                 onPressed: () => _incrementCounter(
                                     1, _currentGame.player.hand[1].distance),
                                 child: LimitedBox(
-                                    maxHeight: 80, child: _getCardImage(1))),
+                                    maxHeight:
+                                        MediaQuery.of(context).size.height *
+                                            0.15,
+                                    child: _getCardImage(1))),
                           )),
                         ),
                         TableCell(
@@ -217,7 +223,10 @@ class _MyGameState extends State<MyGame> {
                                 onPressed: () => _incrementCounter(
                                     2, _currentGame.player.hand[2].distance),
                                 child: LimitedBox(
-                                    maxHeight: 80, child: _getCardImage(2))),
+                                    maxHeight:
+                                        MediaQuery.of(context).size.height *
+                                            0.15,
+                                    child: _getCardImage(2))),
                           )),
                         ),
                         TableCell(
@@ -228,7 +237,10 @@ class _MyGameState extends State<MyGame> {
                                 onPressed: () => _incrementCounter(
                                     3, _currentGame.player.hand[3].distance),
                                 child: LimitedBox(
-                                    maxHeight: 80, child: _getCardImage(3))),
+                                    maxHeight:
+                                        MediaQuery.of(context).size.height *
+                                            0.15,
+                                    child: _getCardImage(3))),
                           )),
                         ),
                         TableCell(
@@ -239,7 +251,10 @@ class _MyGameState extends State<MyGame> {
                                 onPressed: () => _incrementCounter(
                                     4, _currentGame.player.hand[4].distance),
                                 child: LimitedBox(
-                                    maxHeight: 80, child: _getCardImage(4))),
+                                    maxHeight:
+                                        MediaQuery.of(context).size.height *
+                                            0.15,
+                                    child: _getCardImage(4))),
                           )),
                         ),
                         TableCell(
@@ -250,7 +265,10 @@ class _MyGameState extends State<MyGame> {
                                 onPressed: () => _incrementCounter(
                                     5, _currentGame.player.hand[5].distance),
                                 child: LimitedBox(
-                                    maxHeight: 80, child: _getCardImage(5))),
+                                    maxHeight:
+                                        MediaQuery.of(context).size.height *
+                                            0.15,
+                                    child: _getCardImage(5))),
                           )),
                         ),
                         TableCell(
@@ -261,7 +279,10 @@ class _MyGameState extends State<MyGame> {
                                 onPressed: () => _incrementCounter(
                                     6, _currentGame.player.hand[6].distance),
                                 child: LimitedBox(
-                                    maxHeight: 80, child: _getCardImage(6))),
+                                    maxHeight:
+                                        MediaQuery.of(context).size.height *
+                                            0.15,
+                                    child: _getCardImage(6))),
                           )),
                         ),
                       ])
