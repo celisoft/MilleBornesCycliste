@@ -107,8 +107,8 @@ class _MyGameState extends State<MyGame> {
                     ),
                   ]))),
           Center(
-            child: SizedBox(
-              width: 350,
+            child: Expanded(
+              flex: 70,
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -174,7 +174,7 @@ class _MyGameState extends State<MyGame> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               LimitedBox(
-                maxHeight: 60,
+                maxHeight: 80,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Table(
