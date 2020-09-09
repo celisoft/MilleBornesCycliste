@@ -63,7 +63,16 @@ class _MyGameState extends State<MyGame> {
         }
         _playedCardPath = _currentGame.player.hand[pCardID].getUri();
         _currentGame.player.hand.remove(pCardID);
-        _emptyID = pCardID;
+
+        // Move card in hand for every card after the played one
+        if (pCardID < 6) {
+          for (var cardID = pCardID + 1; cardID <= 6; cardID++) {
+            developer.log("Card ID : " + cardID.toString());
+            _currentGame.player.moveCardInHand(cardID, cardID - 1);
+          }
+        }
+
+        _emptyID = 6;
       }
     });
   }

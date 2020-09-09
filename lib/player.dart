@@ -23,4 +23,12 @@ class Player {
   addCardInHand(int index, Card pCard) {
     hand[index] = pCard;
   }
+
+  ///
+  /// Déplace une carte dans la main
+  ///
+  moveCardInHand(int currentIndex, int futureIndex) {
+    hand[futureIndex] = hand[currentIndex];
+    hand[currentIndex] = null;
+  }
 }
